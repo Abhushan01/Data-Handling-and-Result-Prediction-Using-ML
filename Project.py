@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import  warnings
 warnings.filterwarnings("ignore")
 
-df=pd.read_csv(r'C:\Users\Guest\Desktop\Training\training set\diabetes.csv')
+df=pd.read_csv(r'https://github.com/Abhushan01/Data-Handling-and-Result-Prediction-Using-ML/blob/master/diabetes.csv')
 print('Data Cleaning:')
 print(df.columns);print('\n')
 print(df.info());print('\n')
@@ -18,12 +18,12 @@ df.iloc[:,0:6]=df.iloc[:,0:6].replace(0,np.NaN)
 df.fillna(df.mean(),inplace=True)
 print(df.info());print('\n')
 print(df.isnull().sum());print('\n')
-df.to_csv(r'C:\Users\Guest\Desktop\Training\training set\diabetes_cln.csv',index=False)
+df.to_csv(r'https://github.com/Abhushan01/Data-Handling-and-Result-Prediction-Using-ML/blob/master/diabetes_cln.csv',index=False)
 #above command saves the cleaned dataset as diabetes_cln
 
 #data visualization
 print("Data Visualization:")
-df=pd.read_csv(r'C:\Users\Guest\Desktop\Training\training set\diabetes_cln.csv')
+df=pd.read_csv(r'https://github.com/Abhushan01/Data-Handling-and-Result-Prediction-Using-ML/blob/master/diabetes_cln.csv')
 #grouping of data to plot bar graphs 
 outcome_grouping=df.groupby('Outcome').mean()
 outcome_grouping1=df.groupby('Outcome').count()
@@ -48,7 +48,7 @@ print("Feature Selection:");print('\n')
 print("Using Extra Tree Classifier:")
 from sklearn.ensemble import ExtraTreesClassifier
 #Load data
-df=pd.read_csv(r'C:\Users\Guest\Desktop\Training\training set\diabetes0.csv')
+df=pd.read_csv(r'https://github.com/Abhushan01/Data-Handling-and-Result-Prediction-Using-ML/blob/master/diabetes_cln.csv')
 print(df.head());print('\n')
 X=df.iloc[:,0:-1].values
 y=df.iloc[:,-1].values
